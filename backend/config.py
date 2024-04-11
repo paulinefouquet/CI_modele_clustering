@@ -1,1 +1,1 @@
-HTML_PORT ="http://localhost:8888"
+HTML_PORT ="http://pauline-ajax-clustering.eastus.azurecontainer.io:8888"
