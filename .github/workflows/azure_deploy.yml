@@ -23,7 +23,6 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-      version: 1.6.0
 
     - name: Build and push Docker images
       run: |
