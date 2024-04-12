@@ -35,7 +35,7 @@ docker push paulineregistreb15.azurecr.io/pauline-b15-back2
 docker push paulineregistreb15.azurecr.io/pauline-b15-front2
 ```
 
-Executer le groupe de container avec la commande ci-dessous à la base et en remplacant psw par le psw du registre d'image accessible dans accessKey :
+Executer le groupe de container avec la commande ci-dessous à la racine du projet:
 
 ```
 az container create --resource-group pauline-RG-Brief15 --file deploy-aci.yaml --registry-username paulineregistreb15
