@@ -7,7 +7,7 @@ modelInput.addEventListener('change', async function() {
 
     async function score(selectedModel) {
 
-        const apiUrl = `http://pauline-ajax-clustering.eastus.azurecontainer.io:8000/evaluate_clustering_${selectedModel}/`;
+        const apiUrl = `http://pauline-ajax-clustering2.westeurope.azurecontainer.io:8000/evaluate_clustering_${selectedModel}/`;
         console.log(apiUrl)
 
         try {
