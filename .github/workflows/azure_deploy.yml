@@ -13,6 +13,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Install Black
+      run: pip install black
+
     - name: Format code with Black
       run: black .
 
@@ -20,6 +23,7 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+      version: 1.6.0
 
     - name: Build and push Docker images
       run: |
