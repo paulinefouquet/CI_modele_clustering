@@ -34,6 +34,12 @@ jobs:
         azcliversion: latest
         inlineScript: |
           az account show
+    
+    - name: Azure ACR login
+      run: az acr login --name paulineregistreb15
+      env:
+        ACR_USER: paulineregistreb15
+        ACR_PASSWORD: ${{ secrets.IMAGE_REGISTRY_PASSWORD }}
 
     - name: Build and push Docker images
       run: |
