@@ -4,14 +4,13 @@
 
 ### DOCKER / AZURE :
 
-Executer les commandes ci-dessous dans le répertoire backend/  
+Executer les commandes à la racine duy projet
 1. Construction des images  
 ```
-docker build -t back-ajax2-az .
+docker build -t back-ajax2-az backend/
 ```
-Executer les commandes ci-dessous dans le répertoire frontend/  
 ```
-docker build -t front-ajax2-az .
+docker build -t front-ajax2-az frontend/
 ```
 
 ```
