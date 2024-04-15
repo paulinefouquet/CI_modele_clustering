@@ -38,8 +38,8 @@ jobs:
     - name: Azure ACR login
       run: |
         az acr login --name paulineregistreb15
-        az acr repository permission add --name paulineregistreb15 --repository pauline-b15-back2 --principal paulineSP --role reader
-        az acr repository permission add --name paulineregistreb15 --repository pauline-b15-front2 --principal paulineSP --role reader
+        az role assignment create --assignee paulineSP --role acrpull --scope /subscriptions/e4ef8725-8885-4c43-9e0a-f9a0a35b56d7/resourceGroups/pauline-RG-Brief15/providers/Microsoft.ContainerRegistry/registries/paulineregistreb15 --output none
+
       env:
         ACR_USER: paulineregistreb15
         ACR_PASSWORD: ${{ secrets.IMAGE_REGISTRY_PASSWORD }}
