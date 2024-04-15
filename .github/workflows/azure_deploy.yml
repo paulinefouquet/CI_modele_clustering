@@ -36,9 +36,10 @@ jobs:
           az account show
     
     - name: Azure ACR login
-      run: az acr login --name paulineregistreb15
-      az acr repository permission add --name paulineregistreb15 --repository pauline-b15-back2 --principal paulineSP --actions read
-      az acr repository permission add --name paulineregistreb15 --repository pauline-b15-front2 --principal paulineSP --actions read
+      run: |
+        az acr login --name paulineregistreb15
+        az acr repository permission add --name paulineregistreb15 --repository pauline-b15-back2 --principal paulineSP --actions read
+        az acr repository permission add --name paulineregistreb15 --repository pauline-b15-front2 --principal paulineSP --actions read
       env:
         ACR_USER: paulineregistreb15
         ACR_PASSWORD: ${{ secrets.IMAGE_REGISTRY_PASSWORD }}
