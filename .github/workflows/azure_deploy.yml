@@ -38,7 +38,6 @@ jobs:
     - name: Azure ACR login
       run: |
         az acr login --name paulineregistreb15
-        az role assignment create --assignee 1ca14a0d-4419-4667-b449-95cfae90edb7 --role acrpull --scope /subscriptions/e4ef8725-8885-4c43-9e0a-f9a0a35b56d7/resourceGroups/pauline-RG-Brief15/providers/Microsoft.ContainerRegistry/registries/paulineregistreb15 --output none
       env:
         ACR_USER: paulineregistreb15
         ACR_PASSWORD: ${{ secrets.IMAGE_REGISTRY_PASSWORD }}
