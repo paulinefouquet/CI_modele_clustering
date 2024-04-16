@@ -9,7 +9,7 @@ properties:
   containers:
   - name: pauline-b15-front2
     properties:
-      image: pauline-b15-front2:latest
+      image: paulineregistreb15.azurecr.io/pauline-b15-front2:latest
       resources:
         requests:
           cpu: 1
@@ -19,7 +19,7 @@ properties:
       - port: 8888
   - name: pauline-b15-back2
     properties:
-      image: pauline-b15-back2:latest
+      image: paulineregistreb15.azurecr.io/pauline-b15-back2:latest
       ports:
       - port: 8000
       resources:
