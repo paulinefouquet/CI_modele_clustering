@@ -54,3 +54,6 @@ jobs:
 
     - name: Deploy to Azure Container Instances
       run: az container create --resource-group pauline-RG-Brief15 --file .github/workflows/deploy-aci.yaml
+      env:
+        ACR_USER: paulineregistreb15
+        ACR_PASSWORD: ${{ secrets.IMAGE_REGISTRY_PASSWORD }}
