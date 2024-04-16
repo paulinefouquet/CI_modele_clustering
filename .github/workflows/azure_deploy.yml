@@ -53,4 +53,7 @@ jobs:
         docker push paulineregistreb15.azurecr.io/pauline-b15-front2
 
     - name: Deploy to Azure Container Instances
-      run: az container create --resource-group pauline-RG-Brief15 --file deploy-aci.yaml --registry-username paulineregistreb15
+      run: az container create --resource-group pauline-RG-Brief15 --file deploy-aci.yaml --registry-username paulineregistreb15 --password 
+      env:
+        ACR_USER: paulineregistreb15
+        ACR_PASSWORD: ${{ secrets.IMAGE_REGISTRY_PASSWORD }}
