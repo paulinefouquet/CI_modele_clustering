@@ -38,10 +38,10 @@ jobs:
     - name: Azure ACR login
       run: |
         az acr login --name paulineregistreb15
-        az acr update -n paulineregistreb15 --admin-enabled true
-      env:
-        ACR_USER: paulineregistreb15
-        ACR_PASSWORD: ${{ secrets.IMAGE_REGISTRY_PASSWORD }}
+      #   az acr update -n paulineregistreb15 --admin-enabled true
+      # env:
+      #   ACR_USER: paulineregistreb15
+      #   ACR_PASSWORD: ${{ secrets.IMAGE_REGISTRY_PASSWORD }}
 
     - name: Build and push Docker images
       run: |
