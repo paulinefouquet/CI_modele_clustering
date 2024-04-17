@@ -53,7 +53,7 @@ jobs:
       with:
         find: "password.registry"
         replace: ${{ secrets.IMAGE_REGISTRY_PASSWORD }}
-        regex: true
+        regex: false
         include: 'deploy-aci.yaml'
 
     - name: Deploy to Azure Container Instances
