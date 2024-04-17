@@ -2,8 +2,10 @@ import pytest
 from fastapi.testclient import TestClient
 from api import app, read_data
 
+
 def test_execution_test():
     assert 1 == 1
+
 
 # def test_read_data():
 #     result = read_data()
@@ -21,5 +23,3 @@ def test_execution_test():
 #     response = client.get(endpoint)
 #     assert response.status_code == 200
 #     assert "silhouette_score" in response.json()
-
-

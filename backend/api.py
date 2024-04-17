@@ -80,7 +80,7 @@ async def evaluate_clustering_dbscan():
         # DBSCAN clustering
         dbscan = DBSCAN(eps=3, min_samples=2)
         dbscan_labels = dbscan.fit_predict(X)
-        
+
         # Metric
         silhouette = silhouette_score(X, dbscan_labels)
 
