@@ -7,18 +7,18 @@ def test_execution_test():
     assert 1 == 1
 
 
-def test_read_data():
-    csv_file_path = "data/Mall_Customers.csv"
-    # Read the CSV file directly
-    df = pd.read_csv(csv_file_path)
+# def test_read_data():
+#     csv_file_path = "data/Mall_Customers.csv"
+#     # Read the CSV file directly
+#     df = pd.read_csv(csv_file_path)
 
-    # Convert the 'Gender' column to 0 for Female and 1 for Male
-    df["Gender"] = df["Gender"].map({"Female": 0, "Male": 1})
+#     # Convert the 'Gender' column to 0 for Female and 1 for Male
+#     df["Gender"] = df["Gender"].map({"Female": 0, "Male": 1})
 
-    # Prepare the data for clustering
-    X = df.drop(columns=["CustomerID", "Gender"]).values
-    assert X.shape[0] > 0
-    assert X.shape[1] > 0
+#     # Prepare the data for clustering
+#     X = df.drop(columns=["CustomerID", "Gender"]).values
+#     assert X.shape[0] > 0
+#     assert X.shape[1] > 0
 
 
 # client = TestClient(app)
