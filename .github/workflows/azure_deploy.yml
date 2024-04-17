@@ -18,12 +18,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Install Black
-      run: pip install black
-
-    - name: Format code with Black
-      run: black .
   
     - name: Azure login
       uses: azure/login@v2
@@ -57,9 +51,12 @@ jobs:
         replace: ${{ secrets.IMAGE_REGISTRY_PASSWORD }}
         regex: false
         include: 'deploy-aci.yaml'
+    
+    # rajouter une étape delete groupe de container actuel
 
     - name: Deploy to Azure Container Instances
+      # run: az container create --resource-group pauline-RG-Brief15 --file deploy-aci.yaml
       run: az container create --resource-group pauline-RG-Brief15 --file deploy-aci.yaml
-
+    
     # rajouter une notification : liste des commit(avec chaque commit = une tache)
     # bonne pratique commit: {tag du ticket} description
