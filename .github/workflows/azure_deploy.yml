@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+# voir pour on quand python test fini et ok
+# deploy que on pytest sans erreur
 
 permissions:
       id-token: write
@@ -58,3 +60,6 @@ jobs:
 
     - name: Deploy to Azure Container Instances
       run: az container create --resource-group pauline-RG-Brief15 --file deploy-aci.yaml
+
+    # rajouter une notification : liste des commit(avec chaque commit = une tache)
+    # bonne pratique commit: {tag du ticket} description
