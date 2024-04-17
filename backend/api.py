@@ -1,21 +1,16 @@
 from fastapi import FastAPI
-from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN
-from sklearn.metrics import (
-    mean_squared_error,
-    silhouette_score,
-    davies_bouldin_score,
-    calinski_harabasz_score,
-)
-import pandas as pd
 from fastapi.middleware.cors import CORSMiddleware
+from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN
+from sklearn.metrics import silhouette_score
+import pandas as pd
 
-from config import HTML_PORT
+from config import FRONTEND_PORT
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=HTML_PORT,
+    allow_origins=FRONTEND_PORT,
     allow_credentials=True,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
@@ -39,7 +34,7 @@ def read_data():
 
 
 @app.get("/evaluate_clustering_kmeans/")
-async def evaluate_clustering():
+async def evaluate_clustering_kmeans():
     try:
         X = read_data()
 
@@ -48,7 +43,6 @@ async def evaluate_clustering():
         kmeans_labels = kmeans.fit_predict(X)
 
         # Metric
-        # kmeans_mse = mean_squared_error(X, kmeans.cluster_centers_[kmeans_labels])
         silhouette = silhouette_score(X, kmeans_labels)
 
         return {
@@ -59,7 +53,7 @@ async def evaluate_clustering():
 
 
 @app.get("/evaluate_clustering_agglomerative/")
-async def evaluate_clustering():
+async def evaluate_clustering_agglomerative():
     try:
         X = read_data()
 
@@ -79,15 +73,14 @@ async def evaluate_clustering():
 
 
 @app.get("/evaluate_clustering_dbscan/")
-async def evaluate_clustering():
+async def evaluate_clustering_dbscan():
     try:
         X = read_data()
 
         # DBSCAN clustering
         dbscan = DBSCAN(eps=3, min_samples=2)
         dbscan_labels = dbscan.fit_predict(X)
-        # DBSCAN ne retourne pas de cluster centers, donc vous pouvez calculer la métrique de clustering autrement
-
+        
         # Metric
         silhouette = silhouette_score(X, dbscan_labels)
 
