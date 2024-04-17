@@ -75,7 +75,7 @@ jobs:
         regex: false
         include: 'deploy-aci.yaml'
     
-    - name: Delete Actual Container Instances
+    - name: Delete Previous Same Container Instances
       run: az container delete --resource-group pauline-RG-Brief15 --name paulineContainerGroupB15-2 --yes
 
     - name: Deploy to Azure Container Instances
