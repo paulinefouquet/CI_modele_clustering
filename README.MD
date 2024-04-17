@@ -1,43 +1,14 @@
 # Clustering Evaluation
 
-## Démarrage
+Sandbox pour 
 
-### DOCKER / AZURE :
+### Continuous Deploiement :
 
-Executer les commandes à la racine duy projet
-1. Construction des images  
-```
-docker build -t back-ajax2-az backend/
-```
-```
-docker build -t front-ajax2-az frontend/
-```
+1. Prérequis  
 
-```
-docker tag back-ajax2-az paulineregistreb15.azurecr.io/pauline-b15-back2
-```
-```
-docker tag front-ajax2-az paulineregistreb15.azurecr.io/pauline-b15-front2
-```
+suppression de la version actuelle du groupe du container existant 
+paulineContainerGroupB15-2  
 
+2. A chaque push sur main le projet est deployé sur Azure 
 
-pour les commandes ci-dessous au préalable se connecter à azure et au registre
-```
-az login
-az acr login --name paulineregistreb15
-```
-
-```
-docker push paulineregistreb15.azurecr.io/pauline-b15-back2
-```
-```
-docker push paulineregistreb15.azurecr.io/pauline-b15-front2
-```
-
-Executer le groupe de container avec la commande ci-dessous à la racine du projet:
-
-```
-az container create --resource-group pauline-RG-Brief15 --file deploy-aci.yaml --registry-username paulineregistreb15
-```
-
-Rendez-vous sur la page http://pauline-ajax-clustering2.westeurope.azurecontainer.io:8888/
+3. Une fois que le workflow est OK, rendez-vous sur la page http://pauline-ajax-clustering2.westeurope.azurecontainer.io:8888/

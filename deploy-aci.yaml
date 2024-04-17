@@ -5,8 +5,8 @@ properties:
   imageRegistryCredentials:
       - server: paulineregistreb15.azurecr.io
         username: paulineregistreb15
-        password: 3nSXSBIOBnZXjDjqdBkYGd/069AxAhTWRldXzsT+O0+ACRDG/Qu/
-        # password: ${{ secrets.IMAGE_REGISTRY_PASSWORD }}
+        # password: 3nSXSBIOBnZXjDjqdBkYGd/069AxAhTWRldXzsT+O0+ACRDG/Qu/
+        password: password.registry
   containers:
   - name: pauline-b15-front2
     properties:

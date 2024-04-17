@@ -47,6 +47,14 @@ jobs:
         docker tag front-ajax2-az paulineregistreb15.azurecr.io/pauline-b15-front2
         docker push paulineregistreb15.azurecr.io/pauline-b15-back2
         docker push paulineregistreb15.azurecr.io/pauline-b15-front2
+    
+    - name: Find and Replace
+      uses: jacobtomlinson/gha-find-replace@v2
+      with:
+        find: "password.registry"
+        replace: ${{ secrets.IMAGE_REGISTRY_PASSWORD }}
+        regex: true
+        include: 'deploy-aci.yaml'
 
     - name: Deploy to Azure Container Instances
       run: az container create --resource-group pauline-RG-Brief15 --file deploy-aci.yaml
