@@ -7,10 +7,11 @@ def test_execution_test():
     assert 1 == 1
 
 
-# def test_read_data():
-#     result = read_data()
-#     assert result.shape[0] > 0
-#     assert result.shape[1] > 0
+def test_read_data():
+    result = read_data()
+    assert result.shape[0] > 0
+    assert result.shape[1] > 0
+
 
 # client = TestClient(app)
 
