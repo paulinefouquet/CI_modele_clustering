@@ -39,7 +39,7 @@ properties:
       port: 80
     - protocol: tcp
       port: 8000
-    - protocol: tcp
+    # - protocol: tcp
       # port: 8888
 tags: {exampleTag: paulineB15-2}
 type: Microsoft.ContainerInstance/containerGroups
