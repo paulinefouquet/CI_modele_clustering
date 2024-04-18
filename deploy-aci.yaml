@@ -33,7 +33,7 @@ properties:
   osType: Linux
   ipAddress:
     type: Public
-    dnsNameLabel: stagging-pauline-ajax-clustering
+    dnsNameLabel: staging-pauline-ajax-clustering
     ports:
     - protocol: tcp
       port: 80
