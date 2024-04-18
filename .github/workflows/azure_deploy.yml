@@ -35,9 +35,8 @@ jobs:
       run: |
         cd backend && pytest
 
-  build-and-deploy:
+  build-connect:
     runs-on: ubuntu-latest
-    needs: build-test
 
     steps:
     - name: Checkout code
@@ -54,6 +53,14 @@ jobs:
         azcliversion: latest
         inlineScript: |
           az account show
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: build-test
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
     
     - name: Azure ACR login
       run: |
