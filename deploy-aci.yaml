@@ -10,6 +10,7 @@ properties:
       - server: paulineregistreb15.azurecr.io
         username: paulineregistreb15
         password: password.registry
+        
   containers:
   - name: pauline-b15-front2
     properties:

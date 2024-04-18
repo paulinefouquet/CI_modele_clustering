@@ -1,0 +1,5 @@
+__pycache__
+.pytest_cache
+api_spec.md
+Dockerfile
+test_.py
