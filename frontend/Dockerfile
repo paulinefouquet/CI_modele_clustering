@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY . .
 
-CMD ["python", "-m", "http.server", "8888"]
+CMD ["python", "-m", "http.server", "80"]

@@ -1,3 +1,8 @@
+// Ce script JS permet de sélectionner un modèle,
+// d'envoyer une requête à une API pour évaluer le clustering avec ce modèle,
+// et d'afficher le score de performance obtenu.
+
+
 const modelInput = document.querySelector('.model-select');
 const performanceScoreDisplay = document.getElementById('performance-score');
 

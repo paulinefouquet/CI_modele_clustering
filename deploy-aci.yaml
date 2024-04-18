@@ -1,3 +1,7 @@
+# Ce fichier définit la configuration d'un groupe de conteneurs
+# avec des informations sur l'emplacement, les images des conteneurs, les ressources allouées et les ports exposés.
+# il est utilisé par .gihub/workflow pour instancier le groupe de conteneur dans azure
+
 apiVersion: 2023-05-01
 location: westeurope
 name: paulineContainerGroupB15-2
@@ -16,7 +20,7 @@ properties:
           memoryInGb: 1.5
       ports:
       - port: 80
-      - port: 8888
+      # - port: 8888
   - name: pauline-b15-back2
     properties:
       image: paulineregistreb15.azurecr.io/pauline-b15-back2:latest
@@ -36,6 +40,6 @@ properties:
     - protocol: tcp
       port: 8000
     - protocol: tcp
-      port: 8888
+      # port: 8888
 tags: {exampleTag: paulineB15-2}
 type: Microsoft.ContainerInstance/containerGroups

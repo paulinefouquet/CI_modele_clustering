@@ -14,10 +14,6 @@ def test_read_data():
     assert X.shape[0] > 0
 
 
-# def test_empty_csv_raises_error():
-#     with pytest.raises(Exception):
-#         X = fetch_or_read_data()
-
 client = TestClient(app)
 
 
