@@ -22,6 +22,11 @@ app.add_middleware(
 
 def fetch_or_read_data():
     # Path to the CSV file in the data directory
+    data_dir = "data"
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
+
+    # Path to the CSV file in the data directory
     csv_file_path = "data/Mall_Customers.csv"
 
     # Check if the CSV file exists
