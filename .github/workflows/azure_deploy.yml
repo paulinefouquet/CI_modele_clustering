@@ -58,12 +58,12 @@ jobs:
 
     - name: Build and push Docker images
       run: |
-        docker build -t back-ajax2-az backend/
-        docker build -t front-ajax2-az frontend/
-        docker tag back-ajax2-az paulineregistreb15.azurecr.io/pauline-b15-back2
-        docker tag front-ajax2-az paulineregistreb15.azurecr.io/pauline-b15-front2
-        docker push paulineregistreb15.azurecr.io/pauline-b15-back2
-        docker push paulineregistreb15.azurecr.io/pauline-b15-front2
+        docker build -t back-ajax-dev-az backend/
+        docker build -t front-ajax-dev-az frontend/
+        docker tag back-ajax-dev-az paulineregistreb15.azurecr.io/pauline-b15-back-dev
+        docker tag front-ajax-dev-az paulineregistreb15.azurecr.io/pauline-b15-front-dev
+        docker push paulineregistreb15.azurecr.io/pauline-b15-back-dev
+        docker push paulineregistreb15.azurecr.io/pauline-b15-front-dev
     
     - name: Find and Replace
       uses: jacobtomlinson/gha-find-replace@v2
@@ -74,7 +74,7 @@ jobs:
         include: 'deploy-aci.yaml'
     
     - name: Delete Previous Same Container Instances
-      run: az container delete --resource-group pauline-RG-Brief15 --name paulineContainerGroupB15-2 --yes
+      run: az container delete --resource-group pauline-RG-Brief15 --name paulineContainerGroupB15-dev --yes
 
     - name: Deploy to Azure Container Instances
       run: az container create --resource-group pauline-RG-Brief15 --file deploy-aci.yaml

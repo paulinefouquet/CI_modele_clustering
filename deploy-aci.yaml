@@ -4,7 +4,7 @@
 
 apiVersion: 2023-05-01
 location: westeurope
-name: paulineContainerGroupB15-2
+name: paulineContainerGroupB15-dev
 properties:
   imageRegistryCredentials:
       - server: paulineregistreb15.azurecr.io
@@ -14,7 +14,7 @@ properties:
   containers:
   - name: pauline-b15-front2
     properties:
-      image: paulineregistreb15.azurecr.io/pauline-b15-front2:latest
+      image: paulineregistreb15.azurecr.io/pauline-b15-front-dev:latest
       resources:
         requests:
           cpu: 1
@@ -23,7 +23,7 @@ properties:
       - port: 80
   - name: pauline-b15-back2
     properties:
-      image: paulineregistreb15.azurecr.io/pauline-b15-back2:latest
+      image: paulineregistreb15.azurecr.io/pauline-b15-back-dev:latest
       ports:
       - port: 8000
       resources:
@@ -33,12 +33,12 @@ properties:
   osType: Linux
   ipAddress:
     type: Public
-    dnsNameLabel: pauline-ajax-clustering2
+    dnsNameLabel: stagging-pauline-ajax-clustering
     ports:
     - protocol: tcp
       port: 80
     - protocol: tcp
       port: 8000
 
-tags: {exampleTag: paulineB15-2}
+tags: {exampleTag: paulineB15-dev}
 type: Microsoft.ContainerInstance/containerGroups

@@ -1,1 +1,1 @@
-FRONTEND_URL = "http://pauline-ajax-clustering2.westeurope.azurecontainer.io:80"
+FRONTEND_URL = "http://stagging-pauline-ajax-clustering.westeurope.azurecontainer.io:80"
