@@ -10,8 +10,19 @@ permissions:
   contents: read
       
 jobs:
+  download-data:
+    runs-on: ubuntu-latest
+    steps:
+      
+    - name: Download data
+      run: |
+        mkdir -p backend/data/
+        wget -P backend/data/ https://gist.githubusercontent.com/pravalliyaram/5c05f43d2351249927b8a3f3cc3e5ecf/raw/8bd6144a87988213693754baaa13fb204933282d/Mall_Customers.csv
+
   build-test:
     runs-on: ubuntu-latest
+    needs: download-data
+
     steps:
 
     - name: Install dependencies
