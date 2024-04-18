@@ -17,7 +17,7 @@ app.add_middleware(
 )
 
 
-def read_data():
+def fetch_or_read_data():
     # Path to the CSV file in the data directory
     csv_file_path = "data/Mall_Customers.csv"
 
@@ -36,7 +36,7 @@ def read_data():
 @app.get("/evaluate_clustering_kmeans/")
 async def evaluate_clustering_kmeans():
     try:
-        X = read_data()
+        X = fetch_or_read_data()
 
         # KMeans clustering
         kmeans = KMeans(n_clusters=3, random_state=42)
@@ -55,7 +55,7 @@ async def evaluate_clustering_kmeans():
 @app.get("/evaluate_clustering_agglomerative/")
 async def evaluate_clustering_agglomerative():
     try:
-        X = read_data()
+        X = fetch_or_read_data()
 
         # Hierarchical clustering
         agglomerative = AgglomerativeClustering(n_clusters=3)
@@ -75,7 +75,7 @@ async def evaluate_clustering_agglomerative():
 @app.get("/evaluate_clustering_dbscan/")
 async def evaluate_clustering_dbscan():
     try:
-        X = read_data()
+        X = fetch_or_read_data()
 
         # DBSCAN clustering
         dbscan = DBSCAN(eps=3, min_samples=2)

@@ -1,7 +1,7 @@
 import pytest
 import numpy as np
 from fastapi.testclient import TestClient
-from api import app, read_data
+from api import app, fetch_or_read_data
 
 
 def test_execution_test():
@@ -9,14 +9,14 @@ def test_execution_test():
 
 
 def test_read_data():
-    X = read_data()
+    X = fetch_or_read_data()
     assert isinstance(X, np.ndarray)
     assert X.shape[0] > 0
 
 
 # def test_empty_csv_raises_error():
 #     with pytest.raises(Exception):
-#         X = read_data()
+#         X = fetch_or_read_data()
 
 client = TestClient(app)
 

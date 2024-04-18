@@ -65,10 +65,10 @@ jobs:
       run: |
         az acr login --name paulineregistreb15
 
-    - name: Download data
-      run: |
-        mkdir -p backend/data/
-        wget -P backend/data/ https://gist.githubusercontent.com/pravalliyaram/5c05f43d2351249927b8a3f3cc3e5ecf/raw/8bd6144a87988213693754baaa13fb204933282d/Mall_Customers.csv
+    # - name: Download data
+    #   run: |
+    #     mkdir -p backend/data/
+    #     wget -P backend/data/ https://gist.githubusercontent.com/pravalliyaram/5c05f43d2351249927b8a3f3cc3e5ecf/raw/8bd6144a87988213693754baaa13fb204933282d/Mall_Customers.csv
 
 
     - name: Build and push Docker images
