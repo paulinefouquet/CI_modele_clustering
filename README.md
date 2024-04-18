@@ -15,4 +15,4 @@ IMAGE_REGISTRY_PASSWORD
 4. A chaque push sur main le projet est testé et deployé sur Azure 
 
 5. Rendez-vous sur la page:  
-http://pauline-ajax-clustering2.westeurope.azurecontainer.io:8888/
+http://pauline-ajax-clustering2.westeurope.azurecontainer.io
