@@ -23,18 +23,18 @@ def fetch_or_read_data():
     # Path to the CSV file in the data directory
     csv_file_path = "data/Mall_Customers.csv"
 
-    # Check if the CSV file exists
-    if not os.path.exists(csv_file_path):
-        # If the file doesn't exist, download it from the URL
-        url = "https://gist.githubusercontent.com/pravalliyaram/5c05f43d2351249927b8a3f3cc3e5ecf/raw/8bd6144a87988213693754baaa13fb204933282d/Mall_Customers.csv"
-        response = requests.get(url)
-        # Check if the request was successful
-        if response.status_code == 200:
-            # Write the content to the CSV file
-            with open(csv_file_path, "wb") as f:
-                f.write(response.content)
-        else:
-            raise Exception(f"Failed to download CSV file from {url}")
+    # # Check if the CSV file exists
+    # if not os.path.exists(csv_file_path):
+    #     # If the file doesn't exist, download it from the URL
+    #     url = "https://gist.githubusercontent.com/pravalliyaram/5c05f43d2351249927b8a3f3cc3e5ecf/raw/8bd6144a87988213693754baaa13fb204933282d/Mall_Customers.csv"
+    #     response = requests.get(url)
+    #     # Check if the request was successful
+    #     if response.status_code == 200:
+    #         # Write the content to the CSV file
+    #         with open(csv_file_path, "wb") as f:
+    #             f.write(response.content)
+    #     else:
+    #         raise Exception(f"Failed to download CSV file from {url}")
 
     # Read the CSV file directly
     df = pd.read_csv(csv_file_path)
