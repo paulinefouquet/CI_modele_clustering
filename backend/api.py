@@ -3,8 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN
 from sklearn.metrics import silhouette_score
 import pandas as pd
-import os
-import requests
+
+# import os
+# import requests
 
 from config import FRONTEND_PORT
 
