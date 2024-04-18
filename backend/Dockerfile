@@ -5,7 +5,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Installer les dépendances de l'application
-RUN pip install --no-cache-dir fastapi uvicorn scikit-learn pandas requests
+RUN pip install --no-cache-dir fastapi uvicorn scikit-learn pandas
 
 # Copier le contenu actuel du répertoire vers le répertoire /app dans le conteneur
 COPY . .
